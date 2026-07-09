@@ -5,7 +5,7 @@ declare(strict_types=1);
 $categories = is_array($categories ?? null) ? $categories : [];
 $activeCategorySlug = (string) ($activeCategorySlug ?? 'all');
 $fallbackImage = asset_url('images/story.png');
-$heroImage = asset_url('images/bg-6.png');
+$heroImage = asset_url('images/bg-7.png');
 $ctaImage = asset_url('images/bg-cta.jpg');
 
 /**
@@ -217,9 +217,69 @@ $services = $mockServices;
             transform: translateY(0); /* เลื่อนกลับมาตำแหน่งปกติ */
         }
     }
+    @media (max-width: 1023px) {
+        .mobile-section-title {
+            color: #043B94 !important;
+            border-bottom: 3px solid #043B94;
+            width: fit-content;
+            padding-bottom: 0.25rem;
+            margin-bottom: 0.75rem !important;
+        }
+        .mobile-blue-bullet {
+            width: 6px !important;
+            height: 6px !important;
+            background-color: #043B94 !important;
+            border-radius: 9999px !important;
+            flex-shrink: 0 !important;
+            display: inline-block;
+        }
+        details[open] .mobile-arrow-rotate {
+            transform: rotate(180deg) !important;
+        }
+        .mobile-hide-h2 {
+            display: block;
+        }
+        .mobile-bg-light-blue {}
+        .mobile-approach-title {}
+        @media (max-width: 1023px) {
+            .mobile-hide-h2 {
+                display: none !important;
+            }
+            .mobile-approach-title {
+                color: #043B94 !important;
+                border-bottom: 3px solid #043B94;
+                width: fit-content;
+                margin-left: auto;
+                margin-right: auto;
+                padding-bottom: 0.25rem;
+                margin-bottom: 1.25rem !important;
+            }
+            .mobile-bg-light-blue {
+                background-color: #eef2ff !important;
+            }
+            .mobile-rounded-hero {
+                border-bottom-left-radius: 2rem !important;
+                border-bottom-right-radius: 2rem !important;
+                border-top-left-radius: 0px !important;
+                border-top-right-radius: 0px !important;
+                margin-top: 0px !important;
+                margin-left: 1rem !important;
+                margin-right: 1rem !important;
+                margin-bottom: 1rem !important;
+                overflow: hidden !important;
+            }
+            @media (min-width: 640px) {
+                .mobile-rounded-hero {
+                    margin-left: 1.5rem !important;
+                    margin-right: 1.5rem !important;
+                    margin-bottom: 1.5rem !important;
+                }
+            }
+        }
+    }
 </style>
 
-<section class="relative overflow-hidden font-sans">
+<section class="mobile-rounded-hero relative overflow-hidden font-sans mt-0 mx-4 mb-4 sm:mt-0 sm:mx-6 sm:mb-6 rounded-t-none rounded-b-[2rem] lg:m-0 lg:rounded-none">
     <div class="absolute inset-0 z-0 overflow-hidden">
         <img src="<?= e($heroImage) ?>" alt="WEBPARK Solutions Background" 
             class="w-full h-full object-cover object-center opacity-100 mix-blend-screen">
@@ -285,7 +345,7 @@ $services = $mockServices;
                     ผสนเทคโนโลยี่ ความเชี่ยวชาญ และความเข้าในธุรกิจ<br>
                     เพื่อช่วยให้องค์กรเพิ่มประสิทธิภาพ ยกระดับองค์กรสู่อนาคต
                 </p>
-                <div class="animate-entrance-up delay-400 flex flex-wrap items-center gap-4">
+                <div class="animate-entrance-up delay-400 flex flex-col items-start lg:flex-row lg:items-center gap-4">
                     <a href="<?= e(route_url('/service')) ?>" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary text-white text-sm font-semibold rounded-full hover:bg-blue-700 transition-all shadow-md hover:-translate-y-0.5">
                         ดูบริการของเรา
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
@@ -306,9 +366,9 @@ $services = $mockServices;
     </div>
 </section>
 
-<section id="our-services" class="bg-white pt-16 pb-6 font-sans scroll-mt-6">
+<section id="our-services" class="bg-white pt-8 lg:pt-16 pb-6 font-sans scroll-mt-6">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h1 class="gsap-fade-up text-2xl md:text-3xl font-extrabold leading-tight mb-2" style="color: #022862;">
+        <h1 class="gsap-fade-up text-2xl md:text-3xl font-extrabold leading-tight mb-2 mobile-section-title" style="color: #022862;">
             บริการของเรา
         </h1>
 
@@ -349,8 +409,8 @@ $services = $mockServices;
                     >
                 </div>
 
-                <div class="flex flex-col flex-1 p-5 lg:p-6">
-
+                <!-- Desktop Card Body (hidden lg:flex) -->
+                <div class="hidden lg:flex flex-col flex-1 p-6">
                     <div class="flex items-center gap-2 mb-2">
                         <span class="text-2xl leading-none"><?= e($sEmoji) ?></span>
                         <h2 class="text-lg lg:text-xl font-extrabold" style="color: #022862;"><?= e($sTitle) ?></h2>
@@ -390,10 +450,85 @@ $services = $mockServices;
                     <?php endif; ?>
 
                 </div>
+
+                <!-- Mobile Card Body (lg:hidden) -->
+                <div class="lg:hidden flex flex-col flex-1 p-5">
+                    <?php if (!empty($subcats)): ?>
+                        <details class="group/mobdetails">
+                            <summary class="flex items-center justify-between cursor-pointer list-none focus:outline-none select-none">
+                                <h2 class="text-base font-extrabold uppercase text-[#043B94]"><?= e($sTitle) ?></h2>
+                                <svg class="w-5 h-5 shrink-0 text-[#043B94] transition-transform duration-200 mobile-arrow-rotate"
+                                     fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </summary>
+                            
+                            <p class="text-slate-500 text-sm leading-relaxed mt-4 mb-4">
+                                <?= e($sSummary) ?>
+                            </p>
+
+                            <div class="pl-4 pr-3 py-2 space-y-2 border-l-2 border-slate-100 ml-3 mt-1 mb-2">
+                                <?php foreach ($subcats as $item):
+                                    $itemLabel = (string)($item['label'] ?? '');
+                                    $itemHref  = (string)($item['href'] ?? '#');
+                                ?>
+                                <a href="<?= e($itemHref) ?>" class="group/item flex items-center gap-2 text-sm text-slate-600 hover:text-[#043B94] transition-all duration-300">
+                                    <span class="mobile-blue-bullet"></span>
+                                    <span><?= e($itemLabel) ?></span>
+                                </a>
+                                <?php endforeach; ?>
+                            </div>
+                        </details>
+                    <?php else: ?>
+                        <div class="flex items-center justify-between mb-2">
+                            <h2 class="text-base font-extrabold uppercase text-[#043B94]"><?= e($sTitle) ?></h2>
+                        </div>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-4">
+                            <?= e($sSummary) ?>
+                        </p>
+                    <?php endif; ?>
+                </div>
             </div>
 
             <?php endforeach; ?>
 
+        </div>
+</section>
+
+<!-- MOBILE CTA BOX (lg:hidden) -->
+<section class="lg:hidden font-sans px-4 pb-12">
+    <div class="relative rounded-[2rem] overflow-hidden flex flex-col justify-center items-center py-20 px-8"
+         style="min-height: 480px;">
+        
+        <!-- Background Image overlay -->
+        <div class="absolute inset-0 pointer-events-none z-0">
+            <img src="<?= e(asset_url('images/bg-cta.jpg')) ?>" 
+                 alt="CTA Background" 
+                 class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0" style="background-color: rgba(4, 21, 63, 0.75);"></div>
+        </div>
+
+        <div class="relative z-10 flex flex-col items-center text-center">
+            <h2 class="text-white font-black text-2xl tracking-normal leading-tight mb-6">
+                พร้อมขับเคลื่อน<br>
+                ธุรกิจของคุณ<br>
+                ไปข้างหน้าหรือยัง?
+            </h2>
+            <p class="text-white opacity-80 text-[0.8rem] md:text-sm leading-[1.8] mb-8 max-w-[280px] mx-auto">
+                มาคุยกับทีม WEBPARK<br>
+                เพื่อค้นหาโซลูชัน<br>
+                ที่เหมาะกับธุรกิจของคุณ<br>
+                ทั้ง DIGITAL PLATFORM,<br>
+                ระบบ AI และ ERP / ERM<br>
+                ในมุมที่ใช่สำหรับองค์กร
+            </p>
+            <a href="<?= e(route_url('/contact')) ?>" 
+               class="inline-flex items-center gap-2 font-bold text-sm px-8 py-3.5 rounded-full text-blue-600 bg-white transition-transform duration-200 active:scale-95 shadow-md">
+                เริ่มต้นปรึกษากับเรา
+                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
+            </a>
         </div>
     </div>
 </section>
@@ -435,15 +570,15 @@ $services = $mockServices;
     </div>
 </section> -->
 
-<section class="bg-white py-16 font-sans">
+<section class="bg-white py-16 font-sans mobile-bg-light-blue">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         <div class="text-center max-w-3xl mx-auto mb-12">
-            <h2 class="gsap-fade-up text-2xl md:text-4xl font-extrabold leading-tight mb-2" style="color: #022862;">
+            <h2 class="gsap-fade-up text-2xl md:text-4xl font-extrabold leading-tight mb-2 mobile-hide-h2" style="color: #022862;">
                 บริการของเรา
             </h2>
 
-            <span class="text-2xl font-bold text-center justify-center gsap-fade-up mb-5 block" style="color: #043B94;">
+            <span class="text-2xl font-bold text-center justify-center gsap-fade-up mb-5 block mobile-approach-title" style="color: #043B94;">
                 แนวคิดในการทำงานของเรา
             </span>
             <p class="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
@@ -455,34 +590,39 @@ $services = $mockServices;
             <?php
             $approachSteps = [
                 [
-                    'number' => '01',
-                    'icon'   => asset_url('images/icon-1.png'),
-                    'title'  => 'เข้าใจธุรกิจของคุณ',
-                    'desc'   => 'ศึกษาความต้องการ วิเคราะห์ปัญหา และกำหนดแนวทางที่เหมาะสมกับธุรกิจของท่านอย่างแท้จริง',
+                    'number'   => '01',
+                    'icon'     => asset_url('images/icon-1.png'),
+                    'mob_icon' => asset_url('images/think_1.svg'),
+                    'title'    => 'เข้าใจธุรกิจของคุณ',
+                    'desc'     => 'ศึกษาความต้องการ วิเคราะห์ปัญหา และกำหนดแนวทางที่เหมาะสมกับธุรกิจของท่านอย่างแท้จริง',
                 ],
                 [
-                    'number' => '02',
-                    'icon'   => asset_url('images/icon-2.png'),
-                    'title'  => 'ออกแบบให้ใช้งานได้จริง',
-                    'desc'   => 'ออกแบบประสบการณ์ใช้งานที่เน้นความง่าย และประสิทธิภาพ ตอบโจทย์ผู้ใช้งานทุกระดับ',
+                    'number'   => '02',
+                    'icon'     => asset_url('images/icon-2.png'),
+                    'mob_icon' => asset_url('images/think_2.svg'),
+                    'title'    => 'ออกแบบให้ใช้งานได้จริง',
+                    'desc'     => 'ออกแบบประสบการณ์ใช้งานที่เน้นความง่าย และประสิทธิภาพ ตอบโจทย์ผู้ใช้งานทุกระดับ',
                 ],
                 [
-                    'number' => '03',
-                    'icon'   => asset_url('images/icon-3.png'),
-                    'title'  => 'ดูแลอย่างต่อเนื่อง',
-                    'desc'   => 'ให้บริการหลังการขาย พร้อมทีมซัพพอร์ต และอัปเดตระบบอย่างสม่ำเสมอ',
+                    'number'   => '03',
+                    'icon'     => asset_url('images/icon-3.png'),
+                    'mob_icon' => asset_url('images/think_3.svg'),
+                    'title'    => 'ดูแลอย่างต่อเนื่อง',
+                    'desc'     => 'ให้บริการหลังการขาย พร้อมทีมซัพพอร์ต และอัปเดตระบบอย่างสม่ำเสมอ',
                 ],
                 [
-                    'number' => '04',
-                    'icon'   => asset_url('images/icon-4.png'),
-                    'title'  => 'รองรับการเติบโต',
-                    'desc'   => 'พัฒนาระบบที่ยืดหยุ่น สามารถขยายตัว และปรับตามธุรกิจที่เติบโตในอนาคต',
+                    'number'   => '04',
+                    'icon'     => asset_url('images/icon-4.png'),
+                    'mob_icon' => asset_url('images/think_4.svg'),
+                    'title'    => 'รองรับการเติบโต',
+                    'desc'     => 'พัฒนาระบบที่ยืดหยุ่น สามารถขยายตัว และปรับตามธุรกิจที่เติบโตในอนาคต',
                 ],
             ];
 
             foreach ($approachSteps as $step):
             ?>
-            <div class="gsap-approach-step flex flex-col items-start rounded-2xl border border-slate-100 bg-white p-6 transition-all duration-300 opacity-0 translate-y-10"
+            <!-- Desktop Card (hidden lg:flex) -->
+            <div class="hidden lg:flex gsap-approach-step flex-col items-start rounded-2xl border border-slate-100 bg-white p-6 transition-all duration-300 opacity-0 translate-y-10"
                 style="box-shadow: 0 4px 20px 0 rgba(4,59,148,0.05);">
 
                 <div class="w-14 h-14 shrink-0 rounded-xl bg-blue-50/50 flex items-center justify-center mb-4">
@@ -496,6 +636,28 @@ $services = $mockServices;
                     <span class="text-xl font-extrabold" style="color: #043B94;"><?= e($step['number']) ?></span>
                     <h3 class="text-base font-extrabold" style="color: #022862;"><?= e($step['title']) ?></h3>
                     <p class="text-slate-500 text-xs md:text-sm leading-relaxed"><?= e($step['desc']) ?></p>
+                </div>
+
+            </div>
+
+            <!-- Mobile Card (lg:hidden) -->
+            <div class="lg:hidden flex flex-row items-center gap-5 rounded-2xl border border-slate-100 bg-white p-5 transition-all duration-300"
+                style="box-shadow: 0 4px 20px 0 rgba(4,59,148,0.04);">
+
+                <!-- Icon Left -->
+                <div class="w-16 h-16 shrink-0 rounded-2xl bg-[#f0f4ff] flex items-center justify-center">
+                    <img src="<?= e($step['mob_icon']) ?>"
+                         alt="<?= e($step['title']) ?>"
+                         class="w-10 h-10 object-contain">
+                </div>
+
+                <!-- Text Right -->
+                <div class="flex flex-col gap-1 text-left">
+                    <div class="flex items-center gap-2">
+                        <span class="text-base font-black text-[#043B94]"><?= e($step['number']) ?></span>
+                        <h3 class="text-sm font-bold text-[#022862] leading-tight"><?= e($step['title']) ?></h3>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed"><?= e($step['desc']) ?></p>
                 </div>
 
             </div>
