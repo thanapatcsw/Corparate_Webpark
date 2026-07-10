@@ -50,9 +50,9 @@ $partnerLogos = [
 ];
 
 $mockArticles = [
-    ['id' => 1, 'title' => 'ระบบ ERP คืออะไร? สรุปครบ จบในที่เดียว!', 'summary' => 'ระบบที่รวบรวมองค์กรและกระบวนการทางธุรกิจเข้าด้วยกัน เพื่อการบริหารจัดการและประสานงานที่มีประสิทธิภาพสูงสุดในองค์กร...', 'category' => 'ERP', 'image_path' => 'images/erp.png'],
-    ['id' => 2, 'title' => 'Gemini 3 กับยุคใหม่ของการทำงาน เมื่อ AI ไม่ได้แค่คิด แต่ลงมือทำแทนคน', 'summary' => 'พัฒนาการของระบบ AI อัจฉริยะที่เข้ามาช่วยเพิ่มขีดความสามารถและลดขั้นตอนการทำงานให้รวดเร็ว แม่นยำ และตอบโจทย์ธุรกิจ...', 'category' => 'AI', 'image_path' => 'images/bg-cta.jpg'],
-    ['id' => 3, 'title' => 'Cloud 2026 เก่งกว่าที่คุณคิด: องค์กรไหนรู้ก่อน ได้เปรียบก่อน', 'summary' => 'อัปเดตเทคโนโลยีคลาวด์อัจฉริยะในปี 2026 ที่จะช่วยพลิกโฉมการจัดเก็บฐานข้อมูลและการประมวลผลให้มีความปลอดภัยและยืดหยุ่น...', 'category' => 'CLOUD', 'image_path' => 'images/bg-hand.jpg']
+    ['id' => 1, 'title' => getCurrentLang() === 'th' ? 'ระบบ ERP คืออะไร? สรุปครบ จบในที่เดียว!' : 'What is ERP? A Complete Summary!', 'summary' => getCurrentLang() === 'th' ? 'ระบบที่รวบรวมองค์กรและกระบวนการทางธุรกิจเข้าด้วยกัน เพื่อการบริหารจัดการและประสานงานที่มีประสิทธิภาพสูงสุดในองค์กร...' : 'A system that integrates organization and business processes for the highest efficiency in management and coordination...', 'category' => 'ERP', 'image_path' => 'images/erp.png'],
+    ['id' => 2, 'title' => getCurrentLang() === 'th' ? 'Gemini 3 กับยุคใหม่ของการทำงาน เมื่อ AI ไม่ได้แค่คิด แต่ลงมือทำแทนคน' : 'Gemini 3 and the New Era of Work: When AI Doesn\'t Just Think, But Acts', 'summary' => getCurrentLang() === 'th' ? 'พัฒนาการของระบบ AI อัจฉริยะที่เข้ามาช่วยเพิ่มขีดความสามารถและลดขั้นตอนการทำงานให้รวดเร็ว แม่นยำ และตอบโจทย์ธุรกิจ...' : 'The evolution of intelligent AI systems that help increase capabilities and reduce work steps to be fast, accurate, and meet business needs...', 'category' => 'AI', 'image_path' => 'images/bg-cta.jpg'],
+    ['id' => 3, 'title' => getCurrentLang() === 'th' ? 'Cloud 2026 เก่งกว่าที่คุณคิด: องค์กรไหนรู้ก่อน ได้เปรียบก่อน' : 'Cloud 2026 is Smarter Than You Think: First to Know, First to Gain', 'summary' => getCurrentLang() === 'th' ? 'อัปเดตเทคโนโลยีคลาวด์อัจฉริยะในปี 2026 ที่จะช่วยพลิกโฉมการจัดเก็บฐานข้อมูลและการประมวลผลให้มีความปลอดภัยและยืดหยุ่น...' : 'Updating intelligent cloud technology in 2026 that will revolutionize database storage and processing to be secure and flexible...', 'category' => 'CLOUD', 'image_path' => 'images/bg-hand.jpg']
 ];
 ?>
 
@@ -123,21 +123,16 @@ $mockArticles = [
 
                 <p class="animate-entrance-up delay-300 mt-5 md:mt-6 text-[#022862] text-sm md:text-base lg:text-lg leading-relaxed max-w-lg mb-8 md:mb-10 font-medium">
                     <span class="md:hidden">
-                        ผู้ให้บริการพัฒนา Digital Platform<br>
-                        และระบบ AI ที่ช่วยให้ธุรกิจไทย<br>
-                        ก้าวไปข้างหน้า ด้วยเทคโนโลยี<br>
-                        ที่ใช้งานได้จริง
+                        <?= getCurrentLang() === 'th' ? 'ผู้ให้บริการพัฒนา Digital Platform<br>และระบบ AI ที่ช่วยให้ธุรกิจไทย<br>ก้าวไปข้างหน้า ด้วยเทคโนโลยี<br>ที่ใช้งานได้จริง' : 'Digital Platform and AI system<br>development provider helping Thai businesses<br>move forward with<br>practical technology.' ?>
                     </span>
                     <span class="hidden md:inline">
-                        ผู้ให้บริการพัฒนา Digital Platform<br class="hidden sm:block">
-                        และระบบ AI ที่ช่วยให้ธุรกิจไทยก้าวไปข้างหน้า<br class="hidden sm:block">
-                        ด้วยเทคโนโลยีที่ใช้งานได้จริง
+                        <?= getCurrentLang() === 'th' ? 'ผู้ให้บริการพัฒนา Digital Platform<br class="hidden sm:block">และระบบ AI ที่ช่วยให้ธุรกิจไทยก้าวไปข้างหน้า<br class="hidden sm:block">ด้วยเทคโนโลยีที่ใช้งานได้จริง' : 'Digital Platform and AI system development provider<br class="hidden sm:block">helping Thai businesses move forward<br class="hidden sm:block">with practical technology.' ?>
                     </span>
                 </p>
 
                 <div class="animate-entrance-up delay-400 flex flex-col items-start md:flex-row md:items-center gap-4">
                     <a href="<?= e(route_url('/services')) ?>" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary text-white text-sm font-semibold rounded-full hover:bg-blue-700 transition-all shadow-md hover:-translate-y-0.5">
-                        ดูบริการของเรา
+                        <?= e(t('common.cta_view_services')) ?>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                         </svg>
@@ -148,7 +143,7 @@ $mockArticles = [
                                 <path d="M8 5v14l11-7z"/>
                             </svg>
                         </div>
-                        <span class="text-slate-800 text-lg font-semibold group-hover:text-primary transition-colors">ดูวิดีโอแนะนำ</span>
+                        <span class="text-slate-800 text-lg font-semibold group-hover:text-primary transition-colors"><?= e(t('common.cta_watch_intro_video')) ?></span>
                     </a>
                 </div>
             </div>
@@ -238,17 +233,17 @@ $serviceCards = [
                         <div class="flex flex-col justify-between h-full">
                             <div>
                                 <div class="text-left w-full">
-                                    <span class="text-primary font-bold text-lg md:text-sm tracking-wide inline-block border-b-[3px] border-primary pb-0.5 mb-3 mx-0">เกี่ยวกับเรา</span>
+                                    <span class="text-primary font-bold text-lg md:text-sm tracking-wide inline-block border-b-[3px] border-primary pb-0.5 mb-3 mx-0"><?= e(t('common.about_us_heading')) ?></span>
                                 </div>
-                                <h2 class="text-[#043B94] text-xl font-bold leading-tight mb-3 transition-colors duration-300 group-hover:text-blue-700">
-                                    เราคือ พาร์ทเนอร์<br>ด้านเทคโนโลยี
+                                <h2 class="text-[#043B94] text-xl xl:text-2xl font-bold leading-tight mb-3 transition-colors duration-300 group-hover:text-blue-700">
+                                    <?= e(t('common.we_are_partner')) ?><br class="hidden lg:inline"><?= e(t('common.in_technology')) ?>
                                 </h2>
                                 <p class="text-gray-500 text-[0.8rem] md:text-sm leading-relaxed mb-4">
-                                    มุ่งมั่นพัฒนาโซลูชันดิจิทัลที่ตอบโจทย์ธุรกิจยุคใหม่ ด้วยทีมงานมืออาชีพพร้อมแนวคิดและเทคโนโลยีในการยกระดับการทำงานของคุณ
+                                    <?= e(t('common.partner_description')) ?>
                                 </p>
                             </div>
                             <a href="<?= e(route_url('/about')) ?>" class="inline-flex items-center text-primary text-sm font-semibold transition-colors duration-300 group-hover:text-blue-700 w-max mt-auto">
-                                อ่านเพิ่มเติม
+                                <?= e(t('common.read_more')) ?>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5 transition-transform duration-300 ease-out group-hover:translate-x-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                                 </svg>
@@ -260,6 +255,12 @@ $serviceCards = [
             
             <div class="grid grid-cols-2 w-full bg-white rounded-[2rem] shadow-sm border border-gray-100 overflow-hidden">
                 <?php
+                $serviceCards = [
+                    ['icon' => 'icon-3.png', 'title' => 'ERP / ERM',        'desc' => t('common.solution_org_control'), 'href' => route_url('/erp')],
+                    ['icon' => 'icon-2.png', 'title' => 'Digital Platform', 'desc' => t('common.solution_digital_platform'),              'href' => '#'],
+                    ['icon' => 'icon-4.png', 'title' => 'Online Marketing', 'desc' => t('common.solution_online_marketing'),   'href' => '#'],
+                    ['icon' => 'icon-1.png', 'title' => 'Creative / Design','desc' => t('common.solution_brand_design'),    'href' => '#'],
+                ];
                 foreach ($serviceCards as $i => $card):
                     $borderClass = '';
                     if ($i === 0) {
@@ -282,11 +283,18 @@ $serviceCards = [
                                 <?= e($card['desc']) ?>
                             </p>
                         </div>
-                        <a href="<?= e($card['href']) ?>" class="inline-flex items-center text-primary text-sm font-medium transition-colors duration-300 group-hover:text-blue-700 w-max mt-auto">
-                            อ่านเพิ่มเติม
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5 transition-transform duration-300 ease-out group-hover:translate-x-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                            </svg>
+                        <h2 class="text-[#043B94] font-bold text-[15px] xl:text-[16px] text-center mb-3 whitespace-normal lg:whitespace-nowrap tracking-tight transition-colors duration-300 group-hover:text-blue-600">
+                            <?= e($card['title']) ?>
+                        </h2>
+                        <p class="text-gray-500 text-xs xl:text-sm leading-relaxed mb-6 text-left transition-colors duration-300 group-hover:text-gray-600">
+                            <?= e($card['desc']) ?>
+                        </p>
+                    </div>
+                    <a href="<?= e($card['href']) ?>" class="inline-flex items-center text-primary text-sm font-medium transition-colors duration-300 group-hover:text-blue-700 w-max mt-auto">
+                        <?= e(t('common.read_more')) ?>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5 transition-transform duration-300 ease-out group-hover:translate-x-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
                         </a>
                     </div>
                 <?php endforeach; ?>
@@ -313,17 +321,32 @@ $totalPortfolios = count($displayPortfolios);
 <section class="hidden lg:block bg-white py-20 overflow-hidden">
     <div class="mx-auto w-full max-w-7xl px-8">
         <div class="mb-10">
-            <h2 class="text-4xl font-extrabold leading-none tracking-tighter text-primary m-0">
-                บริการของเรา
-            </h2>
-            <div class="flex items-center justify-between gap-4 mb-4">
-                <span class="text-xl font-bold leading-tight text-dark">ตัวอย่างผลงานของเรา</span>
-                <a href="<?= e(route_url('/services')) ?>" class="shrink-0 inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary text-white text-sm font-semibold rounded-full hover:bg-blue-700 transition-all shadow-md hover:-translate-y-0.5">
-                    ดูบริการทั้งหมด
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                    </svg>
-                </a>
+            <!-- Desktop Layout -->
+            <div class="hidden md:block">
+                <h2 class="text-3xl md:text-4xl font-extrabold leading-none tracking-tighter text-primary m-0">
+                    <?= e(t('common.nav_services') !== 'common.nav_services' ? t('common.nav_services') : (getCurrentLang() === 'th' ? 'บริการของเรา' : 'Our Services')) ?>
+                </h2>
+                <div class="flex flex-row items-center justify-between gap-4 mb-4">
+                    <span class="text-base md:text-lg lg:text-xl font-bold leading-tight text-dark"><?= e(t('home.portfolio_subtitle') !== 'home.portfolio_subtitle' ? t('home.portfolio_subtitle') : (getCurrentLang() === 'th' ? 'ตัวอย่างผลงานของเรา' : 'Our Portfolio')) ?></span>
+                    <a href="<?= e(route_url('/services')) ?>" class="shrink-0 inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary text-white text-sm font-semibold rounded-full hover:bg-blue-700 transition-all shadow-md hover:-translate-y-0.5">
+                        <?= e(t('home.view_all_services') !== 'home.view_all_services' ? t('home.view_all_services') : (getCurrentLang() === 'th' ? 'ดูบริการทั้งหมด' : 'View All Services')) ?>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </a>
+                </div>
+                <p class="text-sm md:text-base leading-relaxed text-slate-500 max-w-xl">
+                    <?= getCurrentLang() === 'th' ? 'รวมผลงานที่เราช่วยออกแบบและพัฒนาโซลูชันดิจิทัล<br>ที่ช่วยให้ธุรกิจเติบโตอย่างยั่งยืน' : 'A collection of digital solutions we designed and developed<br>to help businesses grow sustainably.' ?>
+                </p>
+            </div>
+
+            <!-- Mobile Layout -->
+            <div class="block md:hidden text-left">
+                <span class="text-primary font-bold text-xl tracking-wide inline-block border-b-2 border-primary pb-1 mb-3"><?= e(t('common.nav_services') !== 'common.nav_services' ? t('common.nav_services') : (getCurrentLang() === 'th' ? 'บริการของเรา' : 'Our Services')) ?></span>
+                <h2 class="text-dark font-bold text-2xl leading-tight mb-3"><?= e(t('home.portfolio_subtitle') !== 'home.portfolio_subtitle' ? t('home.portfolio_subtitle') : (getCurrentLang() === 'th' ? 'ตัวอย่างผลงานของเรา' : 'Our Portfolio')) ?></h2>
+                <p class="text-sm leading-relaxed text-slate-500 mb-0">
+                    <?= e(getCurrentLang() === 'th' ? 'รวมผลงานที่เราช่วยออกแบบและพัฒนาโซลูชันดิจิทัล ที่ช่วยให้ธุรกิจเติบโตอย่างยั่งยืน' : 'A collection of digital solutions we designed and developed to help businesses grow sustainably.') ?>
+                </p>
             </div>
             <p class="text-base leading-relaxed text-slate-500 max-w-xl">
                 รวมผลงานที่เราช่วยออกแบบและพัฒนาโซลูชันดิจิทัล<br>ที่ช่วยให้ธุรกิจเติบโตอย่างยั่งยืน
@@ -461,8 +484,8 @@ $totalPortfolios = count($displayPortfolios);
             <h2 class="text-primary font-bold text-4xl tracking-normal uppercase mb-3 block">
                 REVIEW
             </h2>
-            <span class="text-xl font-bold leading-tight text-dark">
-                กว่า <span class="text-primary">120</span> องค์กร ที่เลือก <span class="text-primary">WEBPARK</span> เป็นพาร์ทเนอร์ด้านดิจิทัล
+            <span class="text-base md:text-lg lg:text-xl font-bold leading-tight text-dark">
+                <?= getCurrentLang() === 'th' ? 'กว่า <span class="text-primary">120</span> องค์กร ที่เลือก <span class="text-primary">WEBPARK</span> เป็นพาร์ทเนอร์ด้านดิจิทัล' : 'Over <span class="text-primary">120</span> organizations trust <span class="text-primary">WEBPARK</span> as their digital partner' ?>
             </span>
         </div>
 
@@ -572,16 +595,16 @@ $totalPortfolios = count($displayPortfolios);
                 <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow p-5 flex flex-row items-center justify-start gap-5 border border-slate-100">
                     <img src="/Corparate_Webpark/frontend/public/assets/images/Capa_2.svg" alt="120+ องค์กรชั้นนำ" class="w-20 h-20 object-contain flex-shrink-0" />
                     <div class="flex flex-col text-left">
-                        <h3 class="text-2xl font-black text-blue-600 mb-1 tracking-tight">120+ <span class="text-xl">องค์กรชั้นนำ</span></h3>
-                        <p class="text-slate-600 text-sm font-medium">ที่ไว้วางใจ Webpark</p>
+                        <h3 class="text-2xl font-black text-blue-600 mb-1 tracking-tight">120+ <span class="text-xl"><?= e(getCurrentLang() === 'th' ? 'องค์กรชั้นนำ' : 'Top Orgs') ?></span></h3>
+                        <p class="text-slate-600 text-sm font-medium"><?= e(getCurrentLang() === 'th' ? 'ที่ไว้วางใจ Webpark' : 'Trust Webpark') ?></p>
                     </div>
                 </div>
                 
                 <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow p-5 flex flex-row items-center justify-start gap-5 border border-slate-100">
                     <img src="/Corparate_Webpark/frontend/public/assets/images/Capa_1.svg" alt="15+ ปี" class="w-20 h-20 object-contain flex-shrink-0" />
                     <div class="flex flex-col text-left">
-                        <h3 class="text-2xl font-black text-blue-600 mb-1 tracking-tight">15+ <span class="text-xl">ปี</span></h3>
-                        <p class="text-slate-600 text-sm font-medium">แห่งประสบการณ์ ด้านเทคโนโลยี</p>
+                        <h3 class="text-2xl font-black text-blue-600 mb-1 tracking-tight">15+ <span class="text-xl"><?= e(getCurrentLang() === 'th' ? 'ปี' : 'Years') ?></span></h3>
+                        <p class="text-slate-600 text-sm font-medium"><?= e(getCurrentLang() === 'th' ? 'แห่งประสบการณ์ ด้านเทคโนโลยี' : 'Of Technology Experience') ?></p>
                     </div>
                 </div>
 
@@ -589,15 +612,15 @@ $totalPortfolios = count($displayPortfolios);
                     <img src="/Corparate_Webpark/frontend/public/assets/images/Capa_3.svg" alt="50+" class="w-20 h-20 object-contain flex-shrink-0" />
                     <div class="flex flex-col text-left">
                         <h3 class="text-2xl font-black text-blue-600 mb-1 tracking-tight underline decoration-[4px] underline-offset-4 decoration-blue-500">50+</h3>
-                        <p class="text-slate-600 text-sm font-medium mt-1">ระบบและโปรเจกต์ ที่ส่งมอบ</p>
+                        <p class="text-slate-600 text-sm font-medium mt-1"><?= e(getCurrentLang() === 'th' ? 'ระบบและโปรเจกต์ ที่ส่งมอบ' : 'Systems & Projects Delivered') ?></p>
                     </div>
                 </div>
 
                 <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow p-5 flex flex-row items-center justify-start gap-5 border border-slate-100">
                     <img src="/Corparate_Webpark/frontend/public/assets/images/Capa_4.svg" alt="ครบวงจร" class="w-20 h-20 object-contain flex-shrink-0" />
                     <div class="flex flex-col text-left">
-                        <h3 class="text-2xl font-black text-blue-600 mb-1 tracking-tight">ครบวงจร</h3>
-                        <p class="text-slate-600 text-sm font-medium">ตั้งแต่วางแผนพัฒนา ถึงดูแลหลังบ้าน</p>
+                        <h3 class="text-2xl font-black text-blue-600 mb-1 tracking-tight"><?= e(getCurrentLang() === 'th' ? 'ครบวงจร' : 'End-to-End') ?></h3>
+                        <p class="text-slate-600 text-sm font-medium"><?= e(getCurrentLang() === 'th' ? 'ตั้งแต่วางแผนพัฒนา ถึงดูแลหลังบ้าน' : 'From Planning to Maintenance') ?></p>
                     </div>
                 </div>
             </div>
@@ -605,7 +628,7 @@ $totalPortfolios = count($displayPortfolios);
 
         <div class="text-center mb-6">
             <h2 class="text-primary font-bold text-2xl tracking-normal mb-2">
-                เสียงจากลูกค้าของเรา
+                <?= e(getCurrentLang() === 'th' ? 'เสียงจากลูกค้าของเรา' : 'Testimonials') ?>
             </h2>
         </div>
 
@@ -655,8 +678,8 @@ $totalPortfolios = count($displayPortfolios);
 
         <!-- Mobile Partners -->
         <div class="mx-auto w-full max-w-7xl py-8 mt-10">
-            <h2 class="text-center text-primary font-bold text-2xl tracking-normal uppercase mb-3 block">
-                องค์กรชั้นนำที่ไว้วางใจ WEBPARK
+            <h2 class="text-center text-primary font-bold text-2xl md:text-3xl tracking-normal uppercase mb-3 block">
+                <?= e(getCurrentLang() === 'th' ? 'องค์กรชั้นนำที่ไว้วางใจ WEBPARK' : 'Leading Organizations that Trust WEBPARK') ?>
             </h2>
             <div class="overflow-hidden relative mt-10">
                 <div class="grid gap-y-8 gap-x-4 justify-items-center items-center" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
@@ -667,6 +690,9 @@ $totalPortfolios = count($displayPortfolios);
                     <?php endforeach; ?>
                 </div>
             </div>
+            <p class="text-center mt-6 text-xs text-slate-400 tracking-wide font-medium">
+                <?= e(getCurrentLang() === 'th' ? 'ทั้งหมดมาจากธุรกิจ การเงิน อสังหาริมทรัพย์ โรงงาน วิศวกรรม สื่อ และอีกมากมาย' : 'Including finance, real estate, manufacturing, engineering, media, and more.') ?>
+            </p>
         </div>
     </div>
 </section>

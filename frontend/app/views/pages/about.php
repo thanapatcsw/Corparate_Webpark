@@ -63,7 +63,7 @@ $contactAddress = $company['contact']['address'] ?? '525/89 ซอยลาด�
         <div class="absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-t from-white to-transparent z-10"></div>
     </div>
 
-    <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 pb-24 lg:pt-28 lg:pb-32 relative z-10">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-6 lg:px-8 pt-12 pb-24 lg:pt-28 lg:pb-32 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
             <div class="max-w-2xl">
@@ -71,7 +71,7 @@ $contactAddress = $company['contact']['address'] ?? '525/89 ซอยลาด�
                     <ol class="inline-flex items-center space-x-2 text-sm md:text-base font-medium text-slate-500">
                         <li>
                             <a href="<?= e(route_url('/')) ?>" class="hover:text-primary transition-colors duration-200">
-                                หน้าแรก
+                                <?= e(t('common.nav_home') !== 'common.nav_home' ? t('common.nav_home') : (getCurrentLang() === 'th' ? 'หน้าแรก' : 'Home')) ?>
                             </a>
                         </li>
                         
@@ -80,23 +80,23 @@ $contactAddress = $company['contact']['address'] ?? '525/89 ซอยลาด�
                         </li>
                         
                         <li aria-current="page">
-                            <span class="text-slate-400">เกี่ยวกับเรา</span>
+                            <span class="text-slate-400"><?= e(t('common.nav_about') !== 'common.nav_about' ? t('common.nav_about') : (getCurrentLang() === 'th' ? 'เกี่ยวกับเรา' : 'About Us')) ?></span>
                         </li>
                     </ol>
                 </nav>
                     
                 <h1 class="animate-fade-up delay-200 text-5xl sm:text-4xl md:text-6xl lg:text-8xl font-lg leading-[1.1] mb-2 tracking-tighter">
-                    <span class="bg-gradient-to-r from-[#898F98] via-[#5d636b] to-[#000208] bg-clip-text text-transparent animate-text-gradient inline-block py-3">ผู้ให้บริการด้าน</span><br class="hidden sm:inline">
+                    <span class="bg-gradient-to-r from-[#898F98] via-[#5d636b] to-[#000208] bg-clip-text text-transparent animate-text-gradient inline-block py-3"><?= e(getCurrentLang() === 'th' ? 'ผู้ให้บริการด้าน' : 'Service Provider for') ?></span><br class="hidden sm:inline">
                     <span class="bg-gradient-to-r from-[#003380] via-[#2563eb] to-[#0055ff] bg-clip-text text-transparent animate-text-gradient inline-block" style="animation-delay: -3s;">ERP / ERM</span>
                 </h1>
 
                 <p class="animate-fade-up delay-300 mt-6 text-[#022862] text-base md:text-lg leading-relaxed max-w-lg mb-10 font-medium">
-                    WEBPARK ผู้เชี่ยวชาญด้าน ERP/ERM และระบบดิจิทัล<br class="hidden sm:inline">ครบวงจร เราช่วยให้องค์กรของคุณทำงานอย่างชาญฉลาด<br class="hidden sm:inline">ด้วยเทคโนโลยีล้ำสมัยแพลตฟอร์มดจิทัลและ AI <br class="hidden sm:inline">เพื่อการเติบโตที่ยั่งยืนในยุคดิจิทัล
+                    <?= getCurrentLang() === 'th' ? 'WEBPARK ผู้เชี่ยวชาญด้าน ERP/ERM และระบบดิจิทัล<br class="hidden sm:inline">ครบวงจร เราช่วยให้องค์กรของคุณทำงานอย่างชาญฉลาด<br class="hidden sm:inline">ด้วยเทคโนโลยีล้ำสมัยแพลตฟอร์มดจิทัลและ AI <br class="hidden sm:inline">เพื่อการเติบโตที่ยั่งยืนในยุคดิจิทัล' : 'WEBPARK, expert in ERP/ERM and comprehensive<br class="hidden sm:inline">digital systems. We help your organization work smartly<br class="hidden sm:inline">with cutting-edge digital platforms and AI<br class="hidden sm:inline">for sustainable growth in the digital era.' ?>
                 </p>
 
                 <div class="animate-entrance-up delay-400 flex flex-col sm:flex-row items-start gap-4">
                     <a href="<?= e(route_url('/contact')) ?>" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary text-white text-sm font-semibold rounded-full hover:bg-blue-700 transition-all shadow-md hover:-translate-y-0.5">
-                        ปรึกษาผู้เชี่ยวชาญ
+                        <?= e(t('common.cta_consult_expert') !== 'common.cta_consult_expert' ? t('common.cta_consult_expert') : (getCurrentLang() === 'th' ? 'ปรึกษาผู้เชี่ยวชาญ' : 'Consult an Expert')) ?>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
@@ -109,7 +109,7 @@ $contactAddress = $company['contact']['address'] ?? '525/89 ซอยลาด�
                             </svg>
                         </div>
                         <span class="text-slate-800 text-lg sm:text font-semibold transition-colors duration-300 group-hover:text-primary">
-                            ดูวิดีโอแนะนำ
+                            <?= e(t('common.cta_watch_intro_video') !== 'common.cta_watch_intro_video' ? t('common.cta_watch_intro_video') : (getCurrentLang() === 'th' ? 'ดูวิดีโอแนะนำ' : 'Watch Video')) ?>
                         </span>
                     </a>
                 </div>
@@ -119,30 +119,29 @@ $contactAddress = $company['contact']['address'] ?? '525/89 ซอยลาด�
     </div>
 </section>
 
-<section class="bg-white py-16 lg:py-24">
-    <div class="mx-auto w-full max-w-7xl px-4 sm:px-4 lg:px-6">
+<section class="bg-white py-8 lg:py-24">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-6 lg:px-6">
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
             <div class="max-w-xl">
                 <h2 class="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight mb-0 lg:mb-3">
-                    เกี่ยวกับเรา
+                    <?= e(t('common.nav_about') !== 'common.nav_about' ? t('common.nav_about') : (getCurrentLang() === 'th' ? 'เกี่ยวกับเรา' : 'About Us')) ?>
                 </h2>
                 <div class="w-48 h-[3px] block lg:hidden" style="width: 48px; height: 3px; background-color: #0663F6;"></div>
 
                 <span class="text-primary text-blue-600 text-xl leading-relaxed mb-8 block">
-                    เรา คือ <span class="text-dark">WEBPARK</span><br>
-                    ผู้นำด้านโซลูชันธุรกิจดิจิทัล
+                    <?= getCurrentLang() === 'th' ? 'เรา คือ <span class="text-dark">WEBPARK</span><br>ผู้นำด้านโซลูชันธุรกิจดิจิทัล' : 'We are <span class="text-dark">WEBPARK</span><br>Leaders in Digital Business Solutions' ?>
                 </span>
                 <p class="text-slate-600 text-sm md:text-base leading-relaxed mb-6">
-                    WEBPARK ก่อตั้งขึ้นด้วยวิสัยทัศน์ที่มุ่งมั่นในการยกระดับศักยภาพธุรกิจไทยผ่านเทคโนโลยีและนวัตกรรมดิจิทัล เราเชี่ยวชาญในการพัฒนาระบบ ERP / ERM แพลตฟอร์มดิจิทัล และโซลูชันที่ตอบโจทย์ทุกความต้องการขององค์กรในทุกอุตสาหกรรม
+                    <?= getCurrentLang() === 'th' ? 'WEBPARK ก่อตั้งขึ้นด้วยวิสัยทัศน์ที่มุ่งมั่นในการยกระดับศักยภาพธุรกิจไทยผ่านเทคโนโลยีและนวัตกรรมดิจิทัล เราเชี่ยวชาญในการพัฒนาระบบ ERP / ERM แพลตฟอร์มดิจิทัล และโซลูชันที่ตอบโจทย์ทุกความต้องการขององค์กรในทุกอุตสาหกรรม' : 'WEBPARK was founded with a strong vision to elevate the potential of Thai businesses through technology and digital innovation. We specialize in developing ERP / ERM systems, digital platforms, and solutions that meet all organizational needs across industries.' ?>
                 </p>
                 <p class="text-slate-600 text-sm md:text-base leading-relaxed mb-10">
-                    ด้วยทีมงานผู้เชี่ยวชาญ ประสบการณ์ยาวนาน และความเข้าใจธุรกิจอย่างลึกซึ้ง เราพร้อมเป็นพาร์ทเนอร์ที่เชื่อถือได้ เพื่อช่วยให้องค์กรของคุณก้าวสู่อนาคตได้อย่างมั่นคงและยั่งยืน
+                    <?= getCurrentLang() === 'th' ? 'ด้วยทีมงานผู้เชี่ยวชาญ ประสบการณ์ยาวนาน และความเข้าใจธุรกิจอย่างลึกซึ้ง เราพร้อมเป็นพาร์ทเนอร์ที่เชื่อถือได้ เพื่อช่วยให้องค์กรของคุณก้าวสู่อนาคตได้อย่างมั่นคงและยั่งยืน' : 'With our team of experts, extensive experience, and deep business understanding, we are ready to be your trusted partner to help your organization advance into the future steadily and sustainably.' ?>
                 </p>
                 
                 <a href="<?= e(route_url('/about')) ?>" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all duration-300">
-                    อ่านเพิ่มเติม
+                    <?= e(t('common.read_more') !== 'common.read_more' ? t('common.read_more') : (getCurrentLang() === 'th' ? 'อ่านเพิ่มเติม' : 'Read More')) ?>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
@@ -161,7 +160,7 @@ $contactAddress = $company['contact']['address'] ?? '525/89 ซอยลาด�
                             <!-- เปลี่ยน SVG เป็น img -->
                             <img src="<?= asset_url('images/about_1.svg') ?>" alt="Experience" class="w-full h-full object-contain">
                         </div>
-                        <h4 class="text-dark font-bold text-sm md:text-base">ประสบการณ์ยาวนาน<br>มากกว่า 12 ปี</h4>
+                        <h4 class="text-dark font-bold text-sm md:text-base"><?= getCurrentLang() === 'th' ? 'ประสบการณ์ยาวนาน<br>มากกว่า 12 ปี' : 'Extensive Experience<br>Over 12 Years' ?></h4>
                     </div>
                     
                     <!-- Block 2 -->
@@ -170,7 +169,7 @@ $contactAddress = $company['contact']['address'] ?? '525/89 ซอยลาด�
                             <!-- เปลี่ยน SVG เป็น img -->
                             <img src="<?= asset_url('images/about_2.svg') ?>" alt="Expert Team" class="w-full h-full object-contain">
                         </div>
-                        <h4 class="text-dark font-bold text-sm md:text-base">ทีมผู้เชี่ยวชาญ<br>พร้อมดูแลคุณ</h4>
+                        <h4 class="text-dark font-bold text-sm md:text-base"><?= getCurrentLang() === 'th' ? 'ทีมผู้เชี่ยวชาญ<br>พร้อมดูแลคุณ' : 'Expert Team<br>Ready to Serve You' ?></h4>
                     </div>
 
                     <!-- Block 3 -->
@@ -179,7 +178,7 @@ $contactAddress = $company['contact']['address'] ?? '525/89 ซอยลาด�
                             <!-- เปลี่ยน SVG เป็น img -->
                             <img src="<?= asset_url('images/about_3.svg') ?>" alt="Reliable Solution" class="w-full h-full object-contain">
                         </div>
-                        <h4 class="text-dark font-bold text-sm md:text-base">โซลูชันที่เชื่อถือได้<br>ปลอดภัย มั่นคง</h4>
+                        <h4 class="text-dark font-bold text-sm md:text-base"><?= getCurrentLang() === 'th' ? 'โซลูชันที่เชื่อถือได้<br>ปลอดภัย มั่นคง' : 'Reliable Solutions<br>Secure & Stable' ?></h4>
                     </div>
 
                     <!-- Block 4 -->
@@ -188,7 +187,7 @@ $contactAddress = $company['contact']['address'] ?? '525/89 ซอยลาด�
                             <!-- เปลี่ยน SVG เป็น img -->
                             <img src="<?= asset_url('images/about_4.svg') ?>" alt="Results Driven" class="w-full h-full object-contain">
                         </div>
-                        <h4 class="text-dark font-bold text-sm md:text-base">มุ่งมั่นผลลัพธ์ที่สร้าง<br>การเติบโตให้ธุรกิจ</h4>
+                        <h4 class="text-dark font-bold text-sm md:text-base"><?= getCurrentLang() === 'th' ? 'มุ่งมั่นผลลัพธ์ที่สร้าง<br>การเติบโตให้ธุรกิจ' : 'Committed to Results<br>Driving Business Growth' ?></h4>
                     </div>
 
                 </div>
@@ -198,21 +197,21 @@ $contactAddress = $company['contact']['address'] ?? '525/89 ซอยลาด�
     </div>
 </section>
 
-<section class="bg-white py-12 font-sans">
-    <div class="mx-auto w-full max-w-7xl px-4 sm:px-4 lg:px-6"> 
+<section class="bg-white py-8 font-sans">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-6 lg:px-6"> 
         <div class="bg-dark rounded-[2rem] overflow-hidden relative shadow-2xl flex flex-col md:flex-row items-center min-h-[300px] lg:min-h-[400px]">
             
             <div class="absolute inset-0 bg-gradient-to-r from-[#0b162c] to-transparent z-10"></div>
             
             <div class="relative z-20 p-8 md:p-12 lg:p-16 w-full md:w-1/2">
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
-                    บริการของเรา
+                    <?= e(t('common.nav_services') !== 'common.nav_services' ? t('common.nav_services') : (getCurrentLang() === 'th' ? 'บริการของเรา' : 'Our Services')) ?>
                 </h2>
                 <p class="text-slate-300 text-sm md:text-base leading-relaxed mb-8 max-w-sm">
-                    กว่า 120 องค์กรชั้นนำไว้วางใจ WEBPARK ในการพัฒนาระบบและโซลูชันดิจิทัล ที่ช่วยยกระดับประสิทธิภาพและขับเคลื่อนธุรกิจ
+                    <?= getCurrentLang() === 'th' ? 'กว่า 120 องค์กรชั้นนำไว้วางใจ WEBPARK ในการพัฒนาระบบและโซลูชันดิจิทัล ที่ช่วยยกระดับประสิทธิภาพและขับเคลื่อนธุรกิจ' : 'Over 120 leading organizations trust WEBPARK in developing digital systems and solutions that enhance efficiency and drive business forward.' ?>
                 </p>
                 <a href="<?= e(route_url('/services')) ?>" class="inline-flex items-center gap-2 px-6 py-2.5 bg-white text-dark text-sm font-bold rounded-full hover:bg-blue-600 hover:text-white transition-all">
-                    ดูบริการของเรา
+                    <?= e(t('common.cta_view_services') !== 'common.cta_view_services' ? t('common.cta_view_services') : (getCurrentLang() === 'th' ? 'ดูบริการของเรา' : 'View Our Services')) ?>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
@@ -226,16 +225,16 @@ $contactAddress = $company['contact']['address'] ?? '525/89 ซอยลาด�
     </div>
 </section>
 
-<section class="bg-white py-16 lg:py-24 font-sans">
-    <div class="mx-auto w-full max-w-7xl px-4 sm:px-4 lg:px-6"> 
+<section class="bg-white py-8 lg:py-24 font-sans">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-6 lg:px-6"> 
         <div class="grid grid-cols-1 lg:grid-cols-[40%_55%] gap-12 lg:gap-16 justify-between items-start">
             
             <div class="lg:top-8 self-start">
                 <h2 class="text-3xl md:text-4xl font-bold text-dark leading-tight mb-6">
-                    <span class="text-primary">แนวคิด</span>ในการทำงานของเรา
+                    <span class="text-primary"><?= getCurrentLang() === 'th' ? 'แนวคิด' : 'Our Approach' ?></span><?= getCurrentLang() === 'th' ? 'ในการทำงานของเรา' : '' ?>
                 </h2>
                 <p class="text-slate-600 text-sm md:text-base leading-relaxed max-w-md">
-                    เราเชื่อว่าการพัฒนาระบบและโซลูชันดิจิทัลที่ดี ไม่ได้เริ่มจากเทคโนโลยีเพียงอย่างเดียว แต่เริ่มจากความเข้าใจธุรกิจของคุณ เราทำงานแบบพาร์ทเนอร์ร่วมคิด ร่วมสร้าง เพื่อให้ทุกโซลูชันที่เราส่งมอบ สามารถใช้งานได้ สร้างคุณค่า และช่วยให้ธุรกิจของคุณเติบโตได้อย่างยั่งยืน
+                    <?= getCurrentLang() === 'th' ? 'เราเชื่อว่าการพัฒนาระบบและโซลูชันดิจิทัลที่ดี ไม่ได้เริ่มจากเทคโนโลยีเพียงอย่างเดียว แต่เริ่มจากความเข้าใจธุรกิจของคุณ เราทำงานแบบพาร์ทเนอร์ร่วมคิด ร่วมสร้าง เพื่อให้ทุกโซลูชันที่เราส่งมอบ สามารถใช้งานได้ สร้างคุณค่า และช่วยให้ธุรกิจของคุณเติบโตได้อย่างยั่งยืน' : 'We believe that developing great digital systems and solutions doesn\'t start with technology alone, but with understanding your business. We work as a partner to co-think and co-create, ensuring every solution we deliver is practical, creates value, and helps your business grow sustainably.' ?>
                 </p>
             </div>
 
@@ -244,26 +243,26 @@ $contactAddress = $company['contact']['address'] ?? '525/89 ซอยลาด�
                 $processes = [
                     [
                         'step' => '01', 
-                        'title' => 'เข้าใจธุรกิจของคุณ',      
-                        'desc' => 'เราทำความเข้าใจเป้าหมาย ความต้องการ และกระบวนการทำงานของธุรกิจ เพื่อออกแบบแนวทางที่ตอบโจทย์ได้อย่างเหมาะสม', 
+                        'title' => getCurrentLang() === 'th' ? 'เข้าใจธุรกิจของคุณ' : 'Understand Your Business',      
+                        'desc' => getCurrentLang() === 'th' ? 'เราทำความเข้าใจเป้าหมาย ความต้องการ และกระบวนการทำงานของธุรกิจ เพื่อออกแบบแนวทางที่ตอบโจทย์ได้อย่างเหมาะสม' : 'We understand your business goals, needs, and workflows to design the most suitable approach.', 
                         'icon' => asset_url('images/think_1.svg')
                     ],
                     [
                         'step' => '02', 
-                        'title' => 'ออกแบบให้ใช้งานได้จริง', 
-                        'desc' => 'เราออกแบบระบบให้ใช้งานง่าย รองรับการขยายตัว <br> และสอดคล้องกับกระบวนการทำงานของธุรกิจ',                              
+                        'title' => getCurrentLang() === 'th' ? 'ออกแบบให้ใช้งานได้จริง' : 'Design for Practical Use', 
+                        'desc' => getCurrentLang() === 'th' ? 'เราออกแบบระบบให้ใช้งานง่าย รองรับการขยายตัว <br> และสอดคล้องกับกระบวนการทำงานของธุรกิจ' : 'We design systems that are easy to use, scalable <br> and aligned with your business processes.',                              
                         'icon' => asset_url('images/think_2.svg')
                     ],
                     [
                         'step' => '03', 
-                        'title' => 'ดูแลอย่างต่อเนื่อง',       
-                        'desc' => 'เราพร้อมให้คำปรึกษาและบริการหลังการขายอย่างต่อเนื่อง <br> เพื่อสร้างความมั่นใจตลอดการใช้งาน',                         
+                        'title' => getCurrentLang() === 'th' ? 'ดูแลอย่างต่อเนื่อง' : 'Continuous Care',       
+                        'desc' => getCurrentLang() === 'th' ? 'เราพร้อมให้คำปรึกษาและบริการหลังการขายอย่างต่อเนื่อง <br> เพื่อสร้างความมั่นใจตลอดการใช้งาน' : 'We provide continuous consultation and after-sales service <br> to build confidence throughout usage.',                         
                         'icon' => asset_url('images/think_3.svg')
                     ],
                     [
                         'step' => '04', 
-                        'title' => 'รองรับการเติบโต',          
-                        'desc' => 'เราพัฒนาระบบที่สามารถเติบโตไปพร้อมกับธุรกิจของคุณ <br> และพร้อมปรับเปลี่ยนให้รองรับอนาคตขององค์กร',                                          
+                        'title' => getCurrentLang() === 'th' ? 'รองรับการเติบโต' : 'Support Growth',          
+                        'desc' => getCurrentLang() === 'th' ? 'เราพัฒนาระบบที่สามารถเติบโตไปพร้อมกับธุรกิจของคุณ <br> และพร้อมปรับเปลี่ยนให้รองรับอนาคตขององค์กร' : 'We develop systems that grow with your business <br> and are ready to adapt for the future of your organization.',                                          
                         'icon' => asset_url('images/think_4.svg')
                     ],
                 ];
@@ -291,27 +290,27 @@ $contactAddress = $company['contact']['address'] ?? '525/89 ซอยลาด�
     </div>
 </section>
 
-<section class="bg-[#f8fafc] py-16 lg:py-24 font-sans">
-    <div class="mx-auto w-full max-w-7xl px-4 sm:px-4 lg:px-6"> 
+<section class="bg-[#f8fafc] py-8 lg:py-24 font-sans">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-6 lg:px-6"> 
         
         <div class="mb-2">
             <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
-                บริการของเราครอบคลุมทุกด้าน
+                <?= getCurrentLang() === 'th' ? 'บริการของเราครอบคลุมทุกด้าน' : 'Comprehensive Services Coverage' ?>
             </h2>
         </div>
         <p class="mb-3 text-sm md:text-base leading-relaxed text-slate-600 max-w-3xl">
-            ระบบที่ช่วยพัฒนาโซลูชันดิจิทัลที่ช่วยให้ธุรกิจเติบโตอย่างยั่งยืน
+            <?= getCurrentLang() === 'th' ? 'ระบบที่ช่วยพัฒนาโซลูชันดิจิทัลที่ช่วยให้ธุรกิจเติบโตอย่างยั่งยืน' : 'Systems that help develop digital solutions to help your business grow sustainably.' ?>
         </p>
 
         <div id="service-scroll-container" class="flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-6 pb-6 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:snap-none">
             <?php
             $services = [
-                ['title' => 'พัฒนาระบบซอฟต์แวร์', 'desc' => 'ออกแบบและพัฒนาระบบที่ตอบโจทย์ความต้องการ<br>เฉพาะขององค์กร', 'icon' => asset_url('images/about_5.svg')],
-                ['title' => 'ระบบสำหรับองค์กร', 'desc' => 'วางโครงสร้างระบบองค์กรที่แข็งแกร่ง<br>รองรับการทำงานและประสิทธิภาพที่เพิ่มขึ้น', 'icon' => asset_url('images/about_6.svg')],
-                ['title' => 'การตลาดออนไลน์', 'desc' => 'วางกลยุทธ์การตลาดออนไลน์ครบวงจร<br>เพิ่มการมองเห็นและสร้างโอกาสทางธุรกิจ', 'icon' => asset_url('images/about_7.svg')],
-                ['title' => 'เว็บไซต์และแอปพลิเคชัน', 'desc' => 'พัฒนาเว็บไซต์และแอปพลิเคชันที่สวยงาม<br>ใช้งานง่าย รองรับทุกอุปกรณ์', 'icon' => asset_url('images/about_8.svg')],
-                ['title' => 'AI Agent และระบบอัตโนมัติ', 'desc' => 'ผสานพลัง AI และระบบอัตโนมัติ<br>เพื่อเพิ่มประสิทธิภาพและลดต้นทุนการทำงาน', 'icon' => asset_url('images/about_9.svg')],
-                ['title' => 'งานออกแบบดิจิทัล', 'desc' => 'สร้างสรรค์งานออกแบบดิจิทัลคุณภาพสูง<br>สื่อสารแบรนด์อย่างมืออาชีพ', 'icon' => asset_url('images/about_10.svg')]
+                ['title' => getCurrentLang() === 'th' ? 'พัฒนาระบบซอฟต์แวร์' : 'Software Development', 'desc' => getCurrentLang() === 'th' ? 'ออกแบบและพัฒนาระบบที่ตอบโจทย์ความต้องการ<br>เฉพาะขององค์กร' : 'Design and develop systems tailored to<br>your organization\'s specific needs', 'icon' => asset_url('images/about_5.svg')],
+                ['title' => getCurrentLang() === 'th' ? 'ระบบสำหรับองค์กร' : 'Enterprise Systems', 'desc' => getCurrentLang() === 'th' ? 'วางโครงสร้างระบบองค์กรที่แข็งแกร่ง<br>รองรับการทำงานและประสิทธิภาพที่เพิ่มขึ้น' : 'Build strong enterprise system structures<br>supporting increased operations and efficiency', 'icon' => asset_url('images/about_6.svg')],
+                ['title' => getCurrentLang() === 'th' ? 'การตลาดออนไลน์' : 'Online Marketing', 'desc' => getCurrentLang() === 'th' ? 'วางกลยุทธ์การตลาดออนไลน์ครบวงจร<br>เพิ่มการมองเห็นและสร้างโอกาสทางธุรกิจ' : 'Plan comprehensive online marketing strategies<br>increasing visibility and business opportunities', 'icon' => asset_url('images/about_7.svg')],
+                ['title' => getCurrentLang() === 'th' ? 'เว็บไซต์และแอปพลิเคชัน' : 'Websites & Applications', 'desc' => getCurrentLang() === 'th' ? 'พัฒนาเว็บไซต์และแอปพลิเคชันที่สวยงาม<br>ใช้งานง่าย รองรับทุกอุปกรณ์' : 'Develop beautiful, user-friendly websites<br>and applications supporting all devices', 'icon' => asset_url('images/about_8.svg')],
+                ['title' => getCurrentLang() === 'th' ? 'AI Agent และระบบอัตโนมัติ' : 'AI Agent & Automation', 'desc' => getCurrentLang() === 'th' ? 'ผสานพลัง AI และระบบอัตโนมัติ<br>เพื่อเพิ่มประสิทธิภาพและลดต้นทุนการทำงาน' : 'Integrate AI power and automation<br>to increase efficiency and reduce costs', 'icon' => asset_url('images/about_9.svg')],
+                ['title' => getCurrentLang() === 'th' ? 'งานออกแบบดิจิทัล' : 'Digital Design', 'desc' => getCurrentLang() === 'th' ? 'สร้างสรรค์งานออกแบบดิจิทัลคุณภาพสูง<br>สื่อสารแบรนด์อย่างมืออาชีพ' : 'Create high-quality digital designs<br>communicating your brand professionally', 'icon' => asset_url('images/about_10.svg')]
             ];
             ?>
             
@@ -395,23 +394,23 @@ $contactAddress = $company['contact']['address'] ?? '525/89 ซอยลาด�
     </div>
 </section>
 
-<section class="bg-slate-50 py-12 lg:py-20 font-sans mb-10">
-    <div class="mx-auto w-full max-w-7xl px-4 sm:px-4 lg:px-6"> 
+<section class="bg-slate-50 py-8 lg:py-20 font-sans mb-4">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-6 lg:px-6"> 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6">
 
             <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow p-6 md:p-8 flex flex-row items-center justify-start gap-6 border border-slate-100">
                 <img src="/Corparate_Webpark/frontend/public/assets/images/Capa_2.svg" alt="120+ องค์กรชั้นนำ" class="w-20 h-20 md:w-24 md:h-24 object-contain flex-shrink-0" />
                 <div class="flex flex-col text-left">
-                    <h3 class="text-2xl md:text-3xl font-black text-blue-600 mb-1 tracking-tight">120+ <span class="text-xl md:text-2xl">องค์กรชั้นนำ</span></h3>
-                    <p class="text-slate-600 text-sm md:text-base font-medium">ที่ไว้วางใจ Webpark</p>
+                    <h3 class="text-2xl md:text-3xl font-black text-blue-600 mb-1 tracking-tight">120+ <span class="text-xl md:text-2xl"><?= e(getCurrentLang() === 'th' ? 'องค์กรชั้นนำ' : 'Top Orgs') ?></span></h3>
+                    <p class="text-slate-600 text-sm md:text-base font-medium"><?= e(getCurrentLang() === 'th' ? 'ที่ไว้วางใจ Webpark' : 'Trust Webpark') ?></p>
                 </div>
             </div>
             
             <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow p-6 md:p-8 flex flex-row items-center justify-start gap-6 border border-slate-100">
                 <img src="/Corparate_Webpark/frontend/public/assets/images/Capa_1.svg" alt="15+ ปี" class="w-20 h-20 md:w-24 md:h-24 object-contain flex-shrink-0" />
                 <div class="flex flex-col text-left">
-                    <h3 class="text-2xl md:text-3xl font-black text-blue-600 mb-1 tracking-tight">15+ <span class="text-xl md:text-2xl">ปี</span></h3>
-                    <p class="text-slate-600 text-sm md:text-base font-medium">แห่งประสบการณ์ ด้านเทคโนโลยี</p>
+                    <h3 class="text-2xl md:text-3xl font-black text-blue-600 mb-1 tracking-tight">15+ <span class="text-xl md:text-2xl"><?= e(getCurrentLang() === 'th' ? 'ปี' : 'Years') ?></span></h3>
+                    <p class="text-slate-600 text-sm md:text-base font-medium"><?= e(getCurrentLang() === 'th' ? 'แห่งประสบการณ์ ด้านเทคโนโลยี' : 'Of Technology Experience') ?></p>
                 </div>
             </div>
 
@@ -419,15 +418,15 @@ $contactAddress = $company['contact']['address'] ?? '525/89 ซอยลาด�
                 <img src="/Corparate_Webpark/frontend/public/assets/images/Capa_3.svg" alt="50+" class="w-20 h-20 md:w-24 md:h-24 object-contain flex-shrink-0" />
                 <div class="flex flex-col text-left">
                     <h3 class="text-2xl md:text-3xl font-black text-blue-600 mb-1 tracking-tight underline decoration-[4px] underline-offset-4 decoration-blue-500">50+</h3>
-                    <p class="text-slate-600 text-sm md:text-base font-medium mt-1">ระบบและโปรเจกต์ ที่ส่งมอบ</p>
+                    <p class="text-slate-600 text-sm md:text-base font-medium mt-1"><?= e(getCurrentLang() === 'th' ? 'ระบบและโปรเจกต์ ที่ส่งมอบ' : 'Systems & Projects Delivered') ?></p>
                 </div>
             </div>
 
             <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow p-6 md:p-8 flex flex-row items-center justify-start gap-6 border border-slate-100">
                 <img src="/Corparate_Webpark/frontend/public/assets/images/Capa_4.svg" alt="ครบวงจร" class="w-20 h-20 md:w-24 md:h-24 object-contain flex-shrink-0" />
                 <div class="flex flex-col text-left">
-                    <h3 class="text-2xl md:text-3xl font-black text-blue-600 mb-1 tracking-tight">ครบวงจร</h3>
-                    <p class="text-slate-600 text-sm md:text-base font-medium">ตั้งแต่วางแผนพัฒนา ถึงดูแลหลังบ้าน</p>
+                    <h3 class="text-2xl md:text-3xl font-black text-blue-600 mb-1 tracking-tight"><?= e(getCurrentLang() === 'th' ? 'ครบวงจร' : 'End-to-End') ?></h3>
+                    <p class="text-slate-600 text-sm md:text-base font-medium"><?= e(getCurrentLang() === 'th' ? 'ตั้งแต่วางแผนพัฒนา ถึงดูแลหลังบ้าน' : 'From Planning to Maintenance') ?></p>
                 </div>
             </div>
 
